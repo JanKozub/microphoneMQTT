@@ -12,9 +12,9 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 
 int minValue = 500;
-int configValue = 50;
+int configValue = 25;
 
-int checkTime = 0;
+long checkTime = 0;
 int lastTime = 0;
 
 boolean state = false;
@@ -61,6 +61,7 @@ void loop() {
       }
     } while (millis() - checkTime < 1000);
   }
+  delay(5);
 }
 
 void publishStatus() {

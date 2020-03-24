@@ -43,12 +43,11 @@ void callback(char* topic, byte* payload, unsigned int length) {
     output = output + (char)payload[i];
   }
   if (output.equals("GET")) {
-    String msg = "microphone," + String(state) + "," + String(configValue);
     publishStatus();
   }
-//  if (output.indexOf("SET") > 0) {
-//    String value = output.substring(4, 7);
-//    configValue = value.toInt();
-//    publishStatus();
-//  }
+  if (output.indexOf("SET") > 0) {
+    String value = output.substring(4, 7);
+    configValue = value.toInt();
+    publishStatus();
+  }
 }
