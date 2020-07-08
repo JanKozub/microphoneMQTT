@@ -12,7 +12,7 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 
 int minValue = 500;
-int configValue = 25;
+int configValue = 50;
 
 long checkTime = 0;
 int lastTime = 0;
